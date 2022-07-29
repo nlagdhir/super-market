@@ -3,6 +3,8 @@ import useFetch from './../hooks/useFetch.js';
 import {useLocation, useParams, Routes, Route, NavLink, Outlet } from 'react-router-dom';
 import ProductDetailsData from './ProductDetailsData.js';
 import './ProductDetails.css';
+import ProductDetailsNutrition from './ProductDetailsNutrition.js';
+import ProductDetailsStorage from './ProductDetailsStorage.js';
 
 export default function ProductDetails() {
     
@@ -48,14 +50,14 @@ export default function ProductDetails() {
             <div>
                 <div className="tabs">
                     <ul>
-                        <li>
-                            <NavLink activeClassName="tab-active" to={`/product/${id}`}>Details</NavLink>
+                        <li> 
+                            <NavLink className={(navData) => navData.isActive ? "tab-active" : "" } to="">Details</NavLink>
                         </li>
                         <li>
-                            <NavLink activeClassName="tab-active" to={`/product/${id}/nutrition`}>Nutrition</NavLink> 
+                            <NavLink className={(navData) => navData.isActive ? "tab-active" : "" } to={'nutrition'}>Nutrition</NavLink> 
                         </li>
                         <li>
-                            <NavLink activeClassName="tab-active" to={`/product/${id}/storage`}>Storage</NavLink>
+                            <NavLink className={(navData) => navData.isActive ? "tab-active" : "" } to={'storage'}>Storage</NavLink>
                         </li>
                     </ul>
                 </div>
@@ -64,9 +66,10 @@ export default function ProductDetails() {
       </section>
 
       <Routes>
-        <Route to="/product/:id" element={<ProductDetailsData />}></Route>
+        <Route path="" element={<ProductDetailsData description={product.description} price={product.price}/> } />
+        <Route path='nutrition' element={<ProductDetailsNutrition nutrition={product.nutrition}/> } />
+        <Route path="storage" element={<ProductDetailsStorage storage={product.storage}/> } />
       </Routes>
-      <Outlet />
       
     </>
 }

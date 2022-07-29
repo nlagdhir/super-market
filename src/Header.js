@@ -24,12 +24,13 @@ export default function Header() {
                         <li className="nav-item">
                            <NavLink to="/products" className="nav-link" >Products</NavLink>
                         </li>
-                        
-                        <li className="nav-item">
-                           <a className="nav-link" href="#">
-                              
+
+                        <li class="nav-item">
+                           <a class="nav-link" href="#">
+                           <img width="250" src={process.env.PUBLIC_URL+'/SVGs/cart.svg'} alt="#" />
                            </a>
                         </li>
+                        
                         {/* <form className="form-inline">
                            <button className="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                            <i className="fa fa-search" aria-hidden="true"></i>

@@ -29,11 +29,7 @@ function App() {
           <Route path="/about" element={<About /> } />
           <Route path="/testimonials" element={<Testimonials /> } />
           <Route path="/products" element={<Products /> } />
-          <Route path="/product/:id" element={<ProductDetails /> }>
-            <Route path="/product/:id" element={<ProductDetailsData /> } />
-            <Route path="/product/:id/nutrition" element={<ProductDetailsNutrition /> } />
-            <Route path="/product/:id/storage" element={<ProductDetailsStorage /> } />
-          </Route>
+          <Route path="/product/:id/*" element={<ProductDetails /> }></Route>
           <Route path="/" element={<NotFound /> } />
         </Routes>
         <Footer />

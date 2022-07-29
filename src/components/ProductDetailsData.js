@@ -1,6 +1,11 @@
-export default function ProductDetailsData() {
+export default function ProductDetailsData(props) {
+    console.log(props);
+    console.log('component called!');
+    const {description, price} = props;
     return <>
-        <p>200g cheese block sold at <strong>$10</strong> per piece.</p>
-        <button>$10</button>
+        <div className="container">
+        <p>{description} sold at <strong>${price}</strong> per piece.</p>
+        <button>${price}</button>
+        </div>
     </>
 }
