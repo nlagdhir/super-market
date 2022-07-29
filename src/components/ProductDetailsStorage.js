@@ -1,5 +1,10 @@
-export default function ProductDetailsStorage() {
+export default function ProductDetailsStorage(props) {
+    const {storage} = props;
     return <>
-        Storage components
+        <div className="container">
+        <p>
+            <strong>Storage instructions:</strong> {storage}
+        </p>
+        </div>
     </>
 }
